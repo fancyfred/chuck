@@ -1,0 +1,88 @@
+* {
+    font-family: 'Verdana';
+}
+
+#title {
+    background-image: url('https://assets.chucknorris.host/img/avatar/chuck-norris.png');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding: 14px;
+}
+
+select, button {
+    padding: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+.lightgreen {
+    background: lightgreen;    
+}
+
+.green {
+    background: green;
+}
+
+.orange {
+    background: #ff7400;
+}
+
+@media only screen and (min-width: 600px) {
+    .half {
+        width:44%;
+        display: inline-block;
+        vertical-align: -webkit-baseline-middle;
+        vertical-align: baseline-middle;
+        margin: 10px;
+        padding: 5px;
+    }
+    
+    .full {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .half {
+        width: 90%;
+        display: inline-block;
+        vertical-align: -webkit-baseline-middle;
+        vertical-align: baseline-middle;
+        margin: 10px;
+        padding: 5px;
+    }
+    
+    .full {
+        width: 100%;
+    }
+}
+
+.joke {
+    padding: 10px;
+}
+
+.err {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.removeX {
+    cursor: pointer;
+    font-size: 8px;
+    background-color: whitesmoke;
+    color: darkgray;
+    border: none;
+}
+
+.removeX:hover {
+    color: black;
+}
+
+.fave-joke {
+    color: black;
+    padding-bottom: 10px;
+}

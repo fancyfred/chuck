@@ -1,0 +1,37 @@
+<div class="full green center">
+  <div style="max-width:400px" class="half lightgreen ">
+    <h2 id="title">Chuck Norris Jokes:</h2>
+    <div class="center">
+      <button (click)="getJoke()">Random Joke</button>
+      <h4 in>Or</h4>
+      <select (change)="getJokeByCat($event.target.value)">
+        <option disabled>Choose a category:</option>
+        <option *ngFor="let cat of categories">{{cat}}</option>
+      </select>
+    </div>
+      
+  </div>
+  
+  <div class="half">
+    <div *ngIf="joke.value" class="lightgreen joke">
+      {{joke.value}}
+    </div>
+    <div id="loading" *ngIf="loading" class="joke">
+      <img style="background:green;height:100px" [src]="baseUrl + 'assets/loading.gif'">
+    </div>
+    <div style="margin-top:15px">
+        <button (click)="addToFaves(joke.value)" *ngIf="joke.value" class="center">Add to faves</button>
+    </div>
+    <div class="err" *ngIf="errMsg != ''">{{errMsg}}</div>
+  </div>
+</div>
+
+<h2 *ngIf="faves.length > 0">My Faves</h2>
+<div class="full lightgreen">
+  <ul>
+    <li class="fave-joke" *ngFor="let fave of faves">
+      {{fave.value}} <button class="removeX" (click)="removeFromFaves(fave)">X</button>
+    </li>
+  </ul>
+</div>
+<button *ngIf="faves.length > 0" (click)="clearAll()">Clear all</button>
